@@ -1,10 +1,13 @@
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, CreditCard, Lock } from 'lucide-react';
+import { X, CreditCard, Lock, ChevronDown } from 'lucide-react';
 import { useState } from 'react';
 
 const Checkout = ({ isOpen, onClose }) => {
     const [step, setStep] = useState(1); // 1: Details, 2: Payment
     const [loading, setLoading] = useState(false);
+    const [selectedProduct, setSelectedProduct] = useState("NDRC");
+
+    const products = ["NDRC", "Assurance", "MCO"];
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -14,7 +17,7 @@ const Checkout = ({ isOpen, onClose }) => {
             setLoading(true);
             setTimeout(() => {
                 setLoading(false);
-                alert("Commande simulée avec succès !");
+                alert(`Commande de BTS MEMORY - ${selectedProduct} simulée avec succès !`);
                 onClose();
                 setStep(1);
             }, 2000);
@@ -43,7 +46,10 @@ const Checkout = ({ isOpen, onClose }) => {
                     >
                         <div className="p-6 md:p-8">
                             <div className="flex justify-between items-center mb-8">
-                                <h2 className="text-2xl font-serif font-bold text-white">Finaliser la commande</h2>
+                                <div className="flex items-center gap-3">
+                                    <img src="/images/LOGO BTS MEMORY.png" alt="Logo" className="w-8 h-8 object-contain" />
+                                    <h2 className="text-2xl font-serif font-bold text-white">BTS MEMORY</h2>
+                                </div>
                                 <button onClick={onClose} className="text-gray-400 hover:text-white transition-colors">
                                     <X size={24} />
                                 </button>
@@ -56,7 +62,20 @@ const Checkout = ({ isOpen, onClose }) => {
                                     </div>
                                     <div>
                                         <h3 className="font-bold text-white">BTS MEMORY</h3>
-                                        <p className="text-sm text-gray-400">Édition au choix</p>
+                                        <div className="relative mt-1">
+                                            <select
+                                                value={selectedProduct}
+                                                onChange={(e) => setSelectedProduct(e.target.value)}
+                                                className="appearance-none bg-transparent text-sm text-bts-orange border-b border-bts-orange/30 pb-0.5 pr-6 focus:outline-none cursor-pointer hover:text-orange-400 transition-colors"
+                                            >
+                                                {products.map(p => (
+                                                    <option key={p} value={p} className="bg-anthracite text-white">
+                                                        Édition {p}
+                                                    </option>
+                                                ))}
+                                            </select>
+                                            <ChevronDown size={14} className="absolute right-0 top-1/2 -translate-y-1/2 text-bts-orange pointer-events-none" />
+                                        </div>
                                     </div>
                                 </div>
                                 <span className="text-bts-orange font-bold text-xl">4,90 €</span>
