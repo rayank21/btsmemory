@@ -10,6 +10,7 @@ import Checkout from './components/Checkout';
 import Rules from './components/Rules';
 import Reviews from './components/Reviews';
 import FAQ from './components/FAQ';
+import Countdown from './components/Countdown';
 
 function App() {
   const [isCheckoutOpen, setIsCheckoutOpen] = useState(false);
@@ -34,6 +35,7 @@ function App() {
     <Layout theme={theme} toggleTheme={toggleTheme}>
       <Hero />
       <Banner />
+      <Countdown />
       <ProductRange />
       <Concept />
       <Rules />
