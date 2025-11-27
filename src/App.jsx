@@ -11,6 +11,7 @@ import Rules from './components/Rules';
 import Reviews from './components/Reviews';
 import FAQ from './components/FAQ';
 import Countdown from './components/Countdown';
+import Demo from './components/Demo';
 
 function App() {
   const [isCheckoutOpen, setIsCheckoutOpen] = useState(false);
@@ -38,6 +39,7 @@ function App() {
       <Countdown />
       <ProductRange />
       <Concept />
+      <Demo />
       <Rules />
       <Showcase />
       <Reviews />
