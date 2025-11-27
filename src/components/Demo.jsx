@@ -14,16 +14,16 @@ const Card = ({ frontImage, backImage, title }) => {
     };
 
     return (
-        <div className="h-[400px] w-full perspective-1000 group cursor-pointer" onClick={handleFlip}>
+        <div className="h-[400px] w-full [perspective:1000px] group cursor-pointer" onClick={handleFlip}>
             <motion.div
                 initial={false}
                 animate={{ rotateY: isFlipped ? 180 : 0 }}
                 transition={{ duration: 0.6, animationDirection: "normal" }}
                 onAnimationComplete={() => setIsAnimating(false)}
-                className="relative w-full h-full preserve-3d"
+                className="relative w-full h-full [transform-style:preserve-3d]"
             >
-                {/* Front (Card Back - Face Down) */}
-                <div className="absolute inset-0 backface-hidden rounded-xl shadow-xl overflow-hidden border-2 border-anthracite/10 dark:border-white/10 bg-anthracite">
+                {/* Front (Card Back - Face Down) - Visible initially (0deg) */}
+                <div className="absolute inset-0 [backface-visibility:hidden] rounded-xl shadow-xl overflow-hidden border-2 border-anthracite/10 dark:border-white/10 bg-anthracite">
                     <img
                         src="/images/BTS%20Memory%20de%20dos.png"
                         alt="Dos de carte BTS Memory"
@@ -34,9 +34,9 @@ const Card = ({ frontImage, backImage, title }) => {
                     </div>
                 </div>
 
-                {/* Back (Content - Face Up) */}
+                {/* Back (Content - Face Up) - Hidden initially (180deg) */}
                 <div
-                    className="absolute inset-0 backface-hidden rounded-xl shadow-xl overflow-hidden border-2 border-bts-orange/20 bg-white dark:bg-anthracite rotate-y-180"
+                    className="absolute inset-0 [backface-visibility:hidden] [transform:rotateY(180deg)] rounded-xl shadow-xl overflow-hidden border-2 border-bts-orange/20 bg-white dark:bg-anthracite"
                 >
                     <img
                         src={frontImage}
