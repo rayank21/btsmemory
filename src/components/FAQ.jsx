@@ -45,7 +45,7 @@ const FAQ = () => {
         },
         {
             question: "Est-ce adapté à tous les BTS ?",
-            answer: "Nous avons des éditions spécifiques pour les BTS NDRC, MCO et Assurance. Le tronc commun (CEJM, Culture G, Anglais) est pertinent pour la plupart des BTS tertiaires."
+            answer: "Nous avons des éditions spécifiques pour les BTS NDRC, MCO et Assurance. Le tronc commun (CEJM, Culture G, Anglais) est pertinent pour la plupart des BTS tertiaires. De plus, des extensions pour d'autres filières arrivent très bientôt !"
         },
         {
             question: "Quels sont les délais de livraison ?",
