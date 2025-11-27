@@ -96,7 +96,7 @@ const ProductRange = () => {
     ];
 
     return (
-        <section className="py-24 px-4 bg-anthracite relative z-20">
+        <section className="py-24 px-4 bg-white dark:bg-anthracite relative z-20 transition-colors duration-300">
             <div className="max-w-7xl mx-auto">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -104,7 +104,7 @@ const ProductRange = () => {
                     viewport={{ once: true }}
                     className="text-center mb-16"
                 >
-                    <h2 className="text-3xl md:text-5xl font-serif font-bold mb-4 text-off-white">La Gamme</h2>
+                    <h2 className="text-3xl md:text-5xl font-serif font-bold mb-4 text-anthracite dark:text-off-white">La Gamme</h2>
                     <div className="w-24 h-1 bg-bts-orange mx-auto"></div>
                 </motion.div>
 

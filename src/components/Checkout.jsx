@@ -42,26 +42,26 @@ const Checkout = ({ isOpen, onClose }) => {
                         initial={{ opacity: 0, y: 50, scale: 0.95 }}
                         animate={{ opacity: 1, y: 0, scale: 1 }}
                         exit={{ opacity: 0, y: 50, scale: 0.95 }}
-                        className="relative w-full max-w-lg max-h-[90vh] bg-[#1A1A1A] border border-white/20 rounded-xl shadow-2xl overflow-y-auto"
+                        className="relative w-full max-w-lg max-h-[90vh] bg-white dark:bg-[#1A1A1A] border border-anthracite/10 dark:border-white/20 rounded-xl shadow-2xl overflow-y-auto transition-colors duration-300"
                     >
                         <div className="p-6 md:p-8">
                             <div className="flex justify-between items-center mb-8">
                                 <div className="flex items-center gap-3">
                                     <img src="/images/LOGO BTS MEMORY.png" alt="Logo" className="w-8 h-8 object-contain" />
-                                    <h2 className="text-2xl font-serif font-bold text-white">BTS MEMORY</h2>
+                                    <h2 className="text-2xl font-serif font-bold text-anthracite dark:text-white">BTS MEMORY</h2>
                                 </div>
-                                <button onClick={onClose} className="text-gray-400 hover:text-white transition-colors">
+                                <button onClick={onClose} className="text-gray-500 dark:text-gray-400 hover:text-anthracite dark:hover:text-white transition-colors">
                                     <X size={24} />
                                 </button>
                             </div>
 
-                            <div className="mb-8 bg-black-matte p-4 rounded-lg flex items-center justify-between border border-white/5">
+                            <div className="mb-8 bg-gray-50 dark:bg-black-matte p-4 rounded-lg flex items-center justify-between border border-anthracite/5 dark:border-white/5">
                                 <div className="flex items-center gap-4">
                                     <div className="w-12 h-12 bg-white/10 rounded-md overflow-hidden">
                                         <img src="/images/Packaging.jpeg" alt="Pack" className="w-full h-full object-cover" />
                                     </div>
                                     <div>
-                                        <h3 className="font-bold text-white">BTS MEMORY</h3>
+                                        <h3 className="font-bold text-anthracite dark:text-white">BTS MEMORY</h3>
                                         <div className="relative mt-1">
                                             <select
                                                 value={selectedProduct}
@@ -69,7 +69,7 @@ const Checkout = ({ isOpen, onClose }) => {
                                                 className="appearance-none bg-transparent text-sm text-bts-orange border-b border-bts-orange/30 pb-0.5 pr-6 focus:outline-none cursor-pointer hover:text-orange-400 transition-colors"
                                             >
                                                 {products.map(p => (
-                                                    <option key={p} value={p} className="bg-anthracite text-white">
+                                                    <option key={p} value={p} className="bg-white dark:bg-anthracite text-anthracite dark:text-white">
                                                         Édition {p}
                                                     </option>
                                                 ))}
@@ -90,30 +90,30 @@ const Checkout = ({ isOpen, onClose }) => {
                                     >
                                         <div className="grid grid-cols-2 gap-4">
                                             <div className="space-y-2">
-                                                <label className="text-sm text-gray-400">Prénom</label>
-                                                <input required type="text" className="w-full bg-black-matte border border-white/10 rounded-md p-3 text-white focus:border-bts-orange focus:outline-none transition-colors" placeholder="Jean" />
+                                                <label className="text-sm text-gray-500 dark:text-gray-400">Prénom</label>
+                                                <input required type="text" className="w-full bg-gray-50 dark:bg-black-matte border border-anthracite/10 dark:border-white/10 rounded-md p-3 text-anthracite dark:text-white focus:border-bts-orange focus:outline-none transition-colors" placeholder="Jean" />
                                             </div>
                                             <div className="space-y-2">
-                                                <label className="text-sm text-gray-400">Nom</label>
-                                                <input required type="text" className="w-full bg-black-matte border border-white/10 rounded-md p-3 text-white focus:border-bts-orange focus:outline-none transition-colors" placeholder="Dupont" />
+                                                <label className="text-sm text-gray-500 dark:text-gray-400">Nom</label>
+                                                <input required type="text" className="w-full bg-gray-50 dark:bg-black-matte border border-anthracite/10 dark:border-white/10 rounded-md p-3 text-anthracite dark:text-white focus:border-bts-orange focus:outline-none transition-colors" placeholder="Dupont" />
                                             </div>
                                         </div>
                                         <div className="space-y-2">
-                                            <label className="text-sm text-gray-400">Email</label>
-                                            <input required type="email" className="w-full bg-black-matte border border-white/10 rounded-md p-3 text-white focus:border-bts-orange focus:outline-none transition-colors" placeholder="jean.dupont@exemple.com" />
+                                            <label className="text-sm text-gray-500 dark:text-gray-400">Email</label>
+                                            <input required type="email" className="w-full bg-gray-50 dark:bg-black-matte border border-anthracite/10 dark:border-white/10 rounded-md p-3 text-anthracite dark:text-white focus:border-bts-orange focus:outline-none transition-colors" placeholder="jean.dupont@exemple.com" />
                                         </div>
                                         <div className="space-y-2">
-                                            <label className="text-sm text-gray-400">Adresse</label>
-                                            <input required type="text" className="w-full bg-black-matte border border-white/10 rounded-md p-3 text-white focus:border-bts-orange focus:outline-none transition-colors" placeholder="123 Rue de la Réussite" />
+                                            <label className="text-sm text-gray-500 dark:text-gray-400">Adresse</label>
+                                            <input required type="text" className="w-full bg-gray-50 dark:bg-black-matte border border-anthracite/10 dark:border-white/10 rounded-md p-3 text-anthracite dark:text-white focus:border-bts-orange focus:outline-none transition-colors" placeholder="123 Rue de la Réussite" />
                                         </div>
                                         <div className="grid grid-cols-2 gap-4">
                                             <div className="space-y-2">
-                                                <label className="text-sm text-gray-400">Code Postal</label>
-                                                <input required type="text" className="w-full bg-black-matte border border-white/10 rounded-md p-3 text-white focus:border-bts-orange focus:outline-none transition-colors" placeholder="75000" />
+                                                <label className="text-sm text-gray-500 dark:text-gray-400">Code Postal</label>
+                                                <input required type="text" className="w-full bg-gray-50 dark:bg-black-matte border border-anthracite/10 dark:border-white/10 rounded-md p-3 text-anthracite dark:text-white focus:border-bts-orange focus:outline-none transition-colors" placeholder="75000" />
                                             </div>
                                             <div className="space-y-2">
-                                                <label className="text-sm text-gray-400">Ville</label>
-                                                <input required type="text" className="w-full bg-black-matte border border-white/10 rounded-md p-3 text-white focus:border-bts-orange focus:outline-none transition-colors" placeholder="Paris" />
+                                                <label className="text-sm text-gray-500 dark:text-gray-400">Ville</label>
+                                                <input required type="text" className="w-full bg-gray-50 dark:bg-black-matte border border-anthracite/10 dark:border-white/10 rounded-md p-3 text-anthracite dark:text-white focus:border-bts-orange focus:outline-none transition-colors" placeholder="Paris" />
                                             </div>
                                         </div>
                                     </motion.div>
@@ -126,17 +126,17 @@ const Checkout = ({ isOpen, onClose }) => {
                                         <div className="p-4 border border-bts-orange/50 bg-bts-orange/10 rounded-lg">
                                             <div className="flex items-center gap-3 mb-4">
                                                 <CreditCard className="text-bts-orange" />
-                                                <span className="font-bold text-white">Carte Bancaire</span>
+                                                <span className="font-bold text-anthracite dark:text-white">Carte Bancaire</span>
                                             </div>
                                             <div className="space-y-4">
-                                                <input required type="text" placeholder="Numéro de carte" className="w-full bg-black-matte border border-white/10 rounded-md p-3 text-white focus:border-bts-orange focus:outline-none" />
+                                                <input required type="text" placeholder="Numéro de carte" className="w-full bg-gray-50 dark:bg-black-matte border border-anthracite/10 dark:border-white/10 rounded-md p-3 text-anthracite dark:text-white focus:border-bts-orange focus:outline-none" />
                                                 <div className="grid grid-cols-2 gap-4">
-                                                    <input required type="text" placeholder="MM/AA" className="w-full bg-black-matte border border-white/10 rounded-md p-3 text-white focus:border-bts-orange focus:outline-none" />
-                                                    <input required type="text" placeholder="CVC" className="w-full bg-black-matte border border-white/10 rounded-md p-3 text-white focus:border-bts-orange focus:outline-none" />
+                                                    <input required type="text" placeholder="MM/AA" className="w-full bg-gray-50 dark:bg-black-matte border border-anthracite/10 dark:border-white/10 rounded-md p-3 text-anthracite dark:text-white focus:border-bts-orange focus:outline-none" />
+                                                    <input required type="text" placeholder="CVC" className="w-full bg-gray-50 dark:bg-black-matte border border-anthracite/10 dark:border-white/10 rounded-md p-3 text-anthracite dark:text-white focus:border-bts-orange focus:outline-none" />
                                                 </div>
                                             </div>
                                         </div>
-                                        <div className="flex items-center justify-center gap-2 text-gray-400 text-sm">
+                                        <div className="flex items-center justify-center gap-2 text-gray-500 dark:text-gray-400 text-sm">
                                             <Lock size={14} />
                                             Paiement 100% sécurisé
                                         </div>

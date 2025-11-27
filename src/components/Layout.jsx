@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
 import Lenis from 'lenis';
 import { motion } from 'framer-motion';
+import ThemeToggle from './ThemeToggle';
 
-const Layout = ({ children }) => {
+const Layout = ({ children, theme, toggleTheme }) => {
     const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
     const [isHovering, setIsHovering] = useState(false);
 
@@ -63,9 +64,11 @@ const Layout = ({ children }) => {
     }); // Re-run on updates to catch new elements
 
     return (
-        <div className="relative min-h-screen bg-anthracite selection:bg-bts-orange selection:text-white overflow-hidden">
+        <div className="relative min-h-screen bg-off-white dark:bg-anthracite selection:bg-bts-orange selection:text-white overflow-hidden transition-colors duration-300">
+            <ThemeToggle theme={theme} toggleTheme={toggleTheme} />
+
             <motion.div
-                className="cursor-dot"
+                className="cursor-dot bg-anthracite dark:bg-white"
                 animate={{
                     x: cursorPosition.x,
                     y: cursorPosition.y,
@@ -74,12 +77,12 @@ const Layout = ({ children }) => {
                 transition={{ type: "tween", ease: "backOut", duration: 0.1 }}
             />
             <motion.div
-                className="cursor-outline"
+                className="cursor-outline border-anthracite dark:border-white"
                 animate={{
                     x: cursorPosition.x,
                     y: cursorPosition.y,
                     scale: isHovering ? 1.5 : 1,
-                    borderColor: isHovering ? '#FF6A00' : 'rgba(255, 106, 0, 0.5)'
+                    borderColor: isHovering ? '#FF6A00' : (theme === 'dark' ? 'rgba(255, 255, 255, 0.5)' : 'rgba(0, 0, 0, 0.5)')
                 }}
                 transition={{ type: "tween", ease: "backOut", duration: 0.15 }}
             />

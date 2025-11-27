@@ -54,7 +54,7 @@ const Rules = () => {
     ];
 
     return (
-        <section className="py-24 px-4 bg-anthracite relative overflow-hidden">
+        <section className="py-24 px-4 bg-white dark:bg-anthracite relative overflow-hidden transition-colors duration-300">
             <div className="max-w-7xl mx-auto">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -63,7 +63,7 @@ const Rules = () => {
                     transition={{ duration: 0.8 }}
                     className="text-center mb-16"
                 >
-                    <h2 className="text-3xl md:text-5xl font-serif font-bold text-off-white mb-4">
+                    <h2 className="text-3xl md:text-5xl font-serif font-bold text-anthracite dark:text-off-white mb-4">
                         Règles du <span className="text-bts-orange">Jeu</span>
                     </h2>
                     <div className="w-24 h-1 bg-bts-orange mx-auto rounded-full"></div>
@@ -77,19 +77,19 @@ const Rules = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: index * 0.1 }}
-                            className="bg-black-matte p-8 rounded-xl border border-white/5 hover:border-bts-orange/30 transition-colors duration-300"
+                            className="bg-gray-50 dark:bg-black-matte p-8 rounded-xl border border-anthracite/5 dark:border-white/5 hover:border-bts-orange/30 transition-colors duration-300"
                         >
                             <div className="flex items-center gap-4 mb-6">
                                 <div className="p-3 bg-bts-orange/10 rounded-lg">
                                     {rule.icon}
                                 </div>
-                                <h3 className="text-xl font-serif font-bold text-off-white">
+                                <h3 className="text-xl font-serif font-bold text-anthracite dark:text-off-white">
                                     {rule.title}
                                 </h3>
                             </div>
                             <ul className="space-y-3">
                                 {rule.content.map((item, i) => (
-                                    <li key={i} className="text-gray-400 font-sans leading-relaxed flex items-start gap-2">
+                                    <li key={i} className="text-gray-600 dark:text-gray-400 font-sans leading-relaxed flex items-start gap-2">
                                         <span className="mt-2 w-1.5 h-1.5 bg-bts-orange rounded-full flex-shrink-0"></span>
                                         <span>{item}</span>
                                     </li>

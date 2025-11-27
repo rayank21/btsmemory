@@ -12,12 +12,12 @@ const Showcase = () => {
     const opacity = useTransform(scrollYProgress, [0, 0.5, 1], [0.5, 1, 0.5]);
 
     return (
-        <section ref={ref} className="relative h-[80vh] overflow-hidden flex items-center justify-center bg-anthracite">
+        <section ref={ref} className="relative h-[80vh] overflow-hidden flex items-center justify-center bg-white dark:bg-anthracite transition-colors duration-300">
             <motion.div
                 style={{ y, opacity }}
                 className="absolute inset-0 z-0"
             >
-                <div className="absolute inset-0 bg-gradient-to-t from-anthracite via-transparent to-anthracite z-10"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-white dark:from-anthracite dark:via-transparent dark:to-anthracite z-10 transition-colors duration-300"></div>
                 <img
                     src="/images/Sur rayon 2.jpeg"
                     alt="BTS MEMORY en rayon"
@@ -31,12 +31,12 @@ const Showcase = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.8 }}
-                    className="bg-black-matte/80 backdrop-blur-md p-8 md:p-12 rounded-sm border border-white/10 shadow-2xl max-w-2xl mx-auto"
+                    className="bg-white/80 dark:bg-black-matte/80 backdrop-blur-md p-8 md:p-12 rounded-sm border border-anthracite/10 dark:border-white/10 shadow-2xl max-w-2xl mx-auto transition-colors duration-300"
                 >
-                    <h2 className="text-3xl md:text-5xl font-serif font-bold mb-4 text-white">
+                    <h2 className="text-3xl md:text-5xl font-serif font-bold mb-4 text-anthracite dark:text-white">
                         Disponible en Magasin
                     </h2>
-                    <p className="text-gray-300 text-lg font-sans">
+                    <p className="text-gray-600 dark:text-gray-300 text-lg font-sans">
                         Retrouvez BTS MEMORY dans vos enseignes culturelles préférées.
                         Une présence physique pour une qualité tangible.
                     </p>

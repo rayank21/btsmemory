@@ -11,9 +11,25 @@ import Rules from './components/Rules';
 
 function App() {
   const [isCheckoutOpen, setIsCheckoutOpen] = useState(false);
+  const [theme, setTheme] = useState('dark');
+
+  const toggleTheme = () => {
+    const newTheme = theme === 'dark' ? 'light' : 'dark';
+    setTheme(newTheme);
+    if (newTheme === 'dark') {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  };
+
+  // Initialize theme
+  useState(() => {
+    document.documentElement.classList.add('dark');
+  }, []);
 
   return (
-    <Layout>
+    <Layout theme={theme} toggleTheme={toggleTheme}>
       <Hero />
       <Banner />
       <ProductRange />

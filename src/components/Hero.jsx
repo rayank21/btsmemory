@@ -34,7 +34,7 @@ const Hero = () => {
     };
 
     return (
-        <section className="relative h-screen flex flex-col items-center justify-center overflow-hidden">
+        <section className="relative h-screen flex flex-col items-center justify-center overflow-hidden bg-off-white dark:bg-anthracite transition-colors duration-300">
             {/* Background Elements */}
             <div className="absolute inset-0 z-0 opacity-20">
                 <motion.div
@@ -76,7 +76,7 @@ const Hero = () => {
                         <motion.span
                             variants={child}
                             key={index}
-                            className="text-2xl md:text-4xl lg:text-5xl font-serif font-medium tracking-wide text-off-white"
+                            className="text-2xl md:text-4xl lg:text-5xl font-serif font-medium tracking-wide text-anthracite dark:text-off-white transition-colors duration-300"
                         >
                             {word}
                         </motion.span>

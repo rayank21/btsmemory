@@ -10,7 +10,7 @@ const Concept = () => {
     ];
 
     return (
-        <section className="py-24 px-4 bg-black-matte relative overflow-hidden">
+        <section className="py-24 px-4 bg-gray-50 dark:bg-black-matte relative overflow-hidden transition-colors duration-300">
             <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
                 {/* Text Content */}
                 <motion.div
@@ -19,10 +19,10 @@ const Concept = () => {
                     viewport={{ once: true }}
                     transition={{ duration: 0.8 }}
                 >
-                    <h2 className="text-3xl md:text-5xl font-serif font-bold mb-8 text-off-white">
+                    <h2 className="text-3xl md:text-5xl font-serif font-bold mb-8 text-anthracite dark:text-off-white">
                         Le Concept <span className="text-bts-orange">BTS MEMORY</span>
                     </h2>
-                    <p className="text-gray-400 text-lg mb-8 leading-relaxed font-sans">
+                    <p className="text-gray-600 dark:text-gray-400 text-lg mb-8 leading-relaxed font-sans">
                         Fini les fiches de révision ennuyeuses. BTS MEMORY transforme tes révisions en un jeu de stratégie rapide et efficace.
                         Emporte-le partout grâce à son format compact et son sac en tissu premium.
                     </p>
@@ -35,7 +35,7 @@ const Concept = () => {
                                 whileInView={{ opacity: 1, x: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: index * 0.1 + 0.5 }}
-                                className="flex items-center gap-3 text-off-white font-medium"
+                                className="flex items-center gap-3 text-anthracite dark:text-off-white font-medium"
                             >
                                 <span className="p-1 bg-bts-orange/20 rounded-full text-bts-orange">
                                     <Check size={18} />
