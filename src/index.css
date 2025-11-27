@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply bg-anthracite text-off-white;
+    cursor: none; /* Hide default cursor for custom one */
+  }
+  
+  body {
+    @apply antialiased overflow-x-hidden;
+  }
+}
+
+/* Lenis Scroll */
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+/* Custom Cursor */
+.cursor-dot {
+  @apply fixed top-0 left-0 w-4 h-4 bg-bts-orange rounded-full pointer-events-none z-50 mix-blend-difference;
+  transform: translate(-50%, -50%);
+}
+
+.cursor-outline {
+  @apply fixed top-0 left-0 w-12 h-12 border border-bts-orange rounded-full pointer-events-none z-50 transition-all duration-300 ease-out;
+  transform: translate(-50%, -50%);
+}
+
+body:hover .cursor-outline {
+  @apply scale-100 opacity-100;
+}
+
+body:hover .cursor-dot {
+  @apply opacity-100;
+}
