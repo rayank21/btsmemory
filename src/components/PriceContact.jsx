@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Mail, ShoppingBag, Instagram } from 'lucide-react';
+import { Mail, ShoppingBag, Instagram, MapPin } from 'lucide-react';
 
 const PriceContact = ({ onBuyClick }) => {
     return (
@@ -36,7 +36,7 @@ const PriceContact = ({ onBuyClick }) => {
                     transition={{ delay: 0.2, duration: 0.6 }}
                 >
                     <h3 className="text-2xl font-serif text-anthracite dark:text-white mb-4 transition-colors duration-300">Contactez-nous</h3>
-                    <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-12">
+                    <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-12 flex-wrap">
                         <a
                             href="mailto:accueil.btsmemory@gmail.com"
                             className="hover-trigger inline-flex items-center gap-2 text-gray-600 dark:text-gray-400 hover:text-bts-orange dark:hover:text-bts-orange transition-colors text-lg font-sans"
@@ -53,6 +53,10 @@ const PriceContact = ({ onBuyClick }) => {
                             <Instagram size={18} />
                             @btsmemory21
                         </a>
+                        <div className="inline-flex items-center gap-2 text-gray-600 dark:text-gray-400 text-lg font-sans">
+                            <MapPin size={18} className="text-bts-orange" />
+                            7 Bd de l'Europe, 21800 Quetigny
+                        </div>
                     </div>
                 </motion.div>
 

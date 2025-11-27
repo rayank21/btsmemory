@@ -8,6 +8,8 @@ import Showcase from './components/Showcase';
 import PriceContact from './components/PriceContact';
 import Checkout from './components/Checkout';
 import Rules from './components/Rules';
+import Reviews from './components/Reviews';
+import FAQ from './components/FAQ';
 
 function App() {
   const [isCheckoutOpen, setIsCheckoutOpen] = useState(false);
@@ -36,6 +38,8 @@ function App() {
       <Concept />
       <Rules />
       <Showcase />
+      <Reviews />
+      <FAQ />
       <PriceContact onBuyClick={() => setIsCheckoutOpen(true)} />
       <Checkout isOpen={isCheckoutOpen} onClose={() => setIsCheckoutOpen(false)} />
     </Layout>
