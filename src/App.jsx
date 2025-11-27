@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import Layout from './components/Layout';
 import Hero from './components/Hero';
+import Banner from './components/Banner';
 import ProductRange from './components/ProductRange';
 import Concept from './components/Concept';
 import Showcase from './components/Showcase';
@@ -14,6 +15,7 @@ function App() {
   return (
     <Layout>
       <Hero />
+      <Banner />
       <ProductRange />
       <Concept />
       <Rules />
