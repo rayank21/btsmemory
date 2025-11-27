@@ -16,44 +16,23 @@ const Card = ({ frontImage, backImage, title }) => {
     return (
         <div className="h-[400px] w-full perspective-1000 group cursor-pointer" onClick={handleFlip}>
             <motion.div
-                initial={false}
-                animate={{ rotateY: isFlipped ? 180 : 0 }}
-                transition={{ duration: 0.6, animationDirection: "normal" }}
-                onAnimationComplete={() => setIsAnimating(false)}
-                className="relative w-full h-full preserve-3d"
+                className="absolute inset-0 backface-hidden rounded-xl shadow-xl overflow-hidden border-2 border-bts-orange/20 bg-white dark:bg-anthracite rotate-y-180"
             >
-                {/* Front (Logo - Face Down) */}
-                <div className="absolute inset-0 backface-hidden rounded-xl shadow-xl overflow-hidden border-2 border-anthracite/10 dark:border-white/10 bg-anthracite flex items-center justify-center">
-                    <div className="absolute inset-0 bg-[url('/images/LOGO%20BTS%20MEMORY.png')] bg-center bg-contain bg-no-repeat opacity-20 transform scale-150"></div>
-                    <img
-                        src="/images/LOGO%20BTS%20MEMORY.png"
-                        alt="Logo BTS Memory"
-                        className="w-32 h-32 object-contain relative z-10"
-                    />
-                    <div className="absolute bottom-4 text-white/50 text-sm font-sans uppercase tracking-widest">
-                        Cliquez pour retourner
-                    </div>
-                </div>
-
-                {/* Back (Content - Face Up) */}
-                <div
-                    className="absolute inset-0 backface-hidden rounded-xl shadow-xl overflow-hidden border-2 border-bts-orange/20 bg-white dark:bg-anthracite rotate-y-180"
-                >
-                    <img
-                        src={frontImage}
-                        alt={title}
-                        className="w-full h-full object-contain p-2"
-                    />
-                </div>
-            </motion.div>
-            <div className="text-center mt-4">
-                <h3 className="text-lg font-serif font-bold text-anthracite dark:text-white mb-1">{title}</h3>
-                <div className="flex items-center justify-center gap-2 text-sm text-bts-orange font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <RotateCcw size={14} />
-                    Retourner
-                </div>
-            </div>
+                <img
+                    src={frontImage}
+                    alt={title}
+                    className="w-full h-full object-contain p-2"
+                />
         </div>
+            </motion.div >
+    <div className="text-center mt-4">
+        <h3 className="text-lg font-serif font-bold text-anthracite dark:text-white mb-1">{title}</h3>
+        <div className="flex items-center justify-center gap-2 text-sm text-bts-orange font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <RotateCcw size={14} />
+            Retourner
+        </div>
+    </div>
+        </div >
     );
 };
 
